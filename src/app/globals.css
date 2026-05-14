@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #111111;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-tertiary: #71717a;
+    --accent-primary: #ffffff;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .btn-scale {
+    @apply inline-flex items-center justify-center px-6 py-2.5 rounded-full font-medium transition-all duration-200 text-sm;
+  }
+
+  .btn-scale-primary {
+    @apply bg-white text-black hover:bg-zinc-200 active:scale-[0.98];
+  }
+
+  .btn-scale-secondary {
+    @apply border border-white/10 bg-transparent text-white hover:bg-white/5 active:scale-[0.98];
+  }
+
+  .glass-card-scale {
+    @apply bg-zinc-900/40 border border-white/5 rounded-2xl backdrop-blur-sm transition-all duration-300;
+  }
+
+  .glass-card-scale:hover {
+    @apply border-white/20 bg-zinc-900/60;
+  }
+
+  .label-caps {
+    @apply text-[10px] uppercase tracking-[0.2em] font-semibold text-zinc-500 mb-4 block;
+  }
+
+  .section-padding {
+    @apply py-20 px-6 md:py-32;
+  }
+
+  .container-scale {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .text-gradient-iridescent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400;
+  }
+
+  .divider-thin {
+    @apply h-px w-full bg-white/5;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Custom animations */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-delay-1 { animation-delay: 0.1s; }
+.reveal-delay-2 { animation-delay: 0.2s; }
+.reveal-delay-3 { animation-delay: 0.3s; }
+
