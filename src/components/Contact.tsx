@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send, ArrowRight } from "lucide-react";
+import { Send, ArrowRight, Mail, Phone } from "lucide-react";
 
 export function Contact() {
   const ref = useRef(null);
@@ -46,13 +46,19 @@ export function Contact() {
             
             <div className="space-y-6">
               <div className="flex items-center gap-4 group cursor-pointer">
-                <div className="text-sm font-bold border-b border-white/10 group-hover:border-white transition-colors pb-1 flex items-center gap-2">
-                  Talk to an expert <ArrowRight size={16} />
+                <div className="flex items-center gap-3">
+                  <Mail size={18} className="text-zinc-500" />
+                  <a href="mailto:Point.theory2026@gmail.com" className="text-sm font-bold border-b border-white/10 group-hover:border-white transition-colors pb-1">
+                    Point.theory2026@gmail.com <ArrowRight size={16} />
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4 group cursor-pointer">
-                <div className="text-sm font-bold border-b border-white/10 group-hover:border-white transition-colors pb-1 flex items-center gap-2">
-                  Explore documentation <ArrowRight size={16} />
+                <div className="flex items-center gap-3">
+                  <Phone size={18} className="text-zinc-500" />
+                  <a href="tel:+916369985102" className="text-sm font-bold border-b border-white/10 group-hover:border-white transition-colors pb-1">
+                    +91 6369985102 <ArrowRight size={16} />
+                  </a>
                 </div>
               </div>
             </div>
